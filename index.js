@@ -24,12 +24,12 @@ const rl = createInterface(process.stdin, process.stdout)
 const app = express()
 const port = process.env.PORT || 8080;
 
-say('Senna FG98', {
+say('Чума FG98', {
   font: 'pallet',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-say(`senna-bot By FG98 Ig: @fg98_ff`, {
+say(`Чума-bot By FG98 Ig: @fg98_ff`, {
   font: 'console',
   align: 'center',
   gradient: ['cyan', 'magenta']
@@ -100,7 +100,7 @@ async function start(file) {
     console.log(chalk.cyan(`Descripción: ${packageJsonObj.description}`));
     console.log(chalk.cyan(`Autor: ${packageJsonObj.author.name}`));
   } catch (err) {
-    console.error(chalk.red(`❌ No se pudo leer el archivo package.json: ${err}`));
+    console.error(chalk.red(`❌ Не удалось прочитать файл package. json: ${err}`));
   }
 
 

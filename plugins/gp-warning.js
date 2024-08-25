@@ -5,7 +5,7 @@ let handler = async (m, { conn, text, args, groupMetadata, usedPrefix, command }
         if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
         else who = m.chat
         if (!who) throw `✳️ ${mssg.noMention}\n\n📌 ${mssg.example}: ${usedPrefix + command} @user`
-        if (conn.user.jid.includes(who)) return m.reply(`✳️ Menciona a un usuario que no sea Bot`)
+        if (conn.user.jid.includes(who)) return m.reply(`✳️ Упоминает пользователя, не являющегося ботом`)
         if (!(who in global.db.data.users)) throw `✳️ ${mssg.userDb}`
         let txt = text.replace('@' + who.split`@`[0], '').trim()
         let name = conn.getName(m.sender)
@@ -30,7 +30,7 @@ ${mssg.wningUser(war)}`, who)
             m.reply(`⛔ ${mssg.warnMaxU(war)}`)
             await time(3000)
             await conn.groupParticipantsUpdate(m.chat, [who], 'remove')
-            m.reply(`♻️ Fuiste eliminado del grupo *${groupMetadata.subject}* porque ha sido advertido *${war}* veces`, who)
+            m.reply(`♻️ Вы были исключены из группы *${groupMetadata.subject}* потому что он был предупрежден *${war}* veces`, who)
         }
 }
 handler.help = ['warn @user']

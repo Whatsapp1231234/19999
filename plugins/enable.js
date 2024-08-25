@@ -1,14 +1,14 @@
  
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
 
-  let isEnable = /true|enable|(turn)?on|1/i.test(command)
+  let isEnable = /true|включить|(turn)?on|1/i.test(command)
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
   let bot = global.db.data.settings[conn.user.jid] || {}
   let type = (args[0] || '').toLowerCase()
   let isAll = false, isUser = false
   switch (type) {
-    case 'welcome':
+    case 'приветствие':
     case 'bv':
     case 'bienvenida':
       if (!m.isGroup) {
@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
        chat.detect = isEnable
      break
     
-    case 'antidelete':
+    case 'антиудаление':
     case 'delete':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -64,7 +64,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       global.opts['self'] = !isEnable
       break
-    case 'antilink':
+    case 'антиссылка':
     case 'antilinkwa':
     case 'antilinkwha':
       if (m.isGroup) {
@@ -86,7 +86,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.captcha = isEnable
       break
-      case 'antibotclone':
+      case 'антиклон':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
@@ -118,7 +118,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       user.chatbot = isEnable
      break
      
-    case 'restrict':
+    case 'ограничить':
     case 'restringir':
       isAll = true
       if (!isOwner) {
@@ -160,27 +160,19 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       if (!/[01]/.test(command)) return m.reply(`
 ≡ Lista de Opciones
 
-┌─⊷ *ADMIN*
-▢ captcha
-▢ welcome
-▢ antilink
-▢ detect 
-▢ document
-▢ nsfw
+┌─⊷ *АДМИН*
+▢ антиудаление
+▢ приветствие
+▢ антиссылка
 └───────────── 
-┌─⊷ *USERS*
-▢ autolevelup
-▢ chatbot 
-└─────────────
+
 ┌─⊷ *OWNER*
-▢ antibotclone
-▢ public
-▢ solopv
-▢ sologp
+▢ антиклон
+▢ ограничить
 └─────────────
 *📌 Ejemplo :*
-*${usedPrefix}on* welcome
-*${usedPrefix}off* welcome
+*${usedPrefix}включить* приветствие
+*${usedPrefix}выключить* приветствие
 `)
       throw false
 }
@@ -192,6 +184,6 @@ m.reply(`
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['nable']
-handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
+handler.command = /^((вк|вык)лючить|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
 export default handler

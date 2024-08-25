@@ -1,5 +1,5 @@
 { 
-    "name": "senna-bot",
+    "name": "Чума-bot",
     "version": "3.0.0",
     "description": "Customizable WhatsApp Bot",
     "main": "index.js",
@@ -23,19 +23,19 @@
         "dylux-bot",
         "senna",
         "multi-device",
-        "senna-bot",
+        "Чума-bot",
         "baileys-md"
     ],
-    "homepage": "https://github.com/FG98F/senna-bot",
+    "homepage": "https://github.com/Whatsapp1231234/mas33",
     "author": {
         "name": "FG98"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/FG98F/senna-bot.git"
+        "url": "git+https://github.com/Whatsapp1231234/mas33.git"
     },
     "bugs": {
-        "url": "https://github.com/FG98F/senna-bot/issues"
+        "url": "https://github.com/Whatsapp1231234/mas33/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {

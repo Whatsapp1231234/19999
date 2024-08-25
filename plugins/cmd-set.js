@@ -3,10 +3,10 @@ let handler = async (m, { text, usedPrefix, command }) => {
     global.db.data.sticker = global.db.data.sticker || {}
     if (!m.quoted) throw `✳️ ${mssg.reply}`
     if (!m.quoted.fileSha256) throw `⚠️ ${mssg.reply}`
-    if (!text) throw `✳️ Falta el comando`
+    if (!text) throw `✳️ Команда отсутствует`
     let sticker = global.db.data.sticker
     let hash = m.quoted.fileSha256.toString('base64')
-    if (sticker[hash] && sticker[hash].locked) throw '⚠️ No tienes permiso para cambiar este comando de Sticker'
+    if (sticker[hash] && sticker[hash].locked) throw '⚠️ У вас нет разрешения на изменение этой команды стикера'
     sticker[hash] = {
         text,
         mentionedJid: m.mentionedJid,

@@ -106,11 +106,11 @@ const question = (texto) => new Promise((resolver) => rl.question(texto, resolve
 let opcion
 if (!fs.existsSync(`./${authFile}/creds.json`) && !methodCodeQR && !methodCode) {
 while (true) {
-opcion = await question("\n\n✳️ Ingrese el metodo de conexion\n🔺 1 : por QR\n🔺 2 : por CÓDIGO\n\n\n")
+opcion = await question("\n\n✳️ Введите метод подключения\n🔺 1 : por QR\n🔺 2 : por CÓDIGO\n\n\n")
 if (opcion === '1' || opcion === '2') {
 break
 } else {
-console.log("\n\n🔴 Ingrese solo una opción \n\n 1 o 2\n\n" )
+console.log("\n\n🔴 Введите только один вариант \n\n 1 o 2\n\n" )
 }}
 opcion = opcion
 }
@@ -143,23 +143,23 @@ global.conn = makeWASocket(connectionOptions)
 
 if (opcion === '2' || methodCode) {
   if (!conn.authState.creds.registered) {  
-  if (MethodMobile) throw new Error('⚠️ Se produjo un Error en la API de movil')
+  if (MethodMobile) throw new Error('⚠️ Произошла ошибка в мобильном API')
   
   let addNumber
   if (!!phoneNumber) {
   addNumber = phoneNumber.replace(/[^0-9]/g, '')
   if (!Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(v))) {
-  console.log(chalk.bgBlack(chalk.bold.redBright("\n\n✴️ Su número debe comenzar  con el codigo de pais")))
+  console.log(chalk.bgBlack(chalk.bold.redBright("\n\n✴️ Ваш номер должен начинаться с кода страны")))
   process.exit(0)
   }} else {
   while (true) {
-  addNumber = await question(chalk.bgBlack(chalk.bold.greenBright("\n\n✳️ Escriba su numero\n\nEjemplo: 5491168xxxx\n\n\n\n")))
+  addNumber = await question(chalk.bgBlack(chalk.bold.greenBright("\n\n✳️ Введите свой номер\n\nEjemplo: 5491168xxxx\n\n\n\n")))
   addNumber = addNumber.replace(/[^0-9]/g, '')
   
   if (addNumber.match(/^\d+$/) && Object.keys(PHONENUMBER_MCC).some(v => addNumber.startsWith(v))) {
   break 
   } else {
-  console.log(chalk.bgBlack(chalk.bold.redBright("\n\n✴️ Asegúrese de agregar el código de país")))
+  console.log(chalk.bgBlack(chalk.bold.redBright("\n\n✴️ Обязательно добавьте код страны")))
   }}
  
   }
@@ -245,14 +245,14 @@ global.reloadHandler = async function (restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate)
   }
 
-  conn.welcome = 'Hola, @user\nBienvenido a @group'
-  conn.bye = 'adiós @user'
-  conn.spromote = '@user promovió a admin'
-  conn.sdemote = '@user degradado'
-  conn.sDesc = 'La descripción ha sido cambiada a \n@desc'
-  conn.sSubject = 'El nombre del grupo ha sido cambiado a \n@group'
-  conn.sIcon = 'El icono del grupo ha sido cambiado'
-  conn.sRevoke = 'El enlace del grupo ha sido cambiado a \n@revoke'
+  conn.welcome = 'Привет, @user\nДобро пожаловать в @group'
+  conn.bye = 'Ну и иди от сюда не удачник @user'
+  conn.spromote = '@user повысил до администратора'
+  conn.sdemote = '@user опущин до пользователя'
+  conn.sDesc = 'Описание было изменено на \n@desc'
+  conn.sSubject = 'Название группы было изменено на \n@group'
+  conn.sIcon = 'Картинка группы была изменена'
+  conn.sRevoke = 'Ссылка на группу была изменена на \n@revoke'
   conn.handler = handler.handler.bind(global.conn)
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn)
   conn.groupsUpdate = handler.groupsUpdate.bind(global.conn)
@@ -291,22 +291,22 @@ global.reload = async (_ev, filename) => {
   if (pluginFilter(filename)) {
     let dir = global.__filename(join(pluginFolder, filename), true)
     if (filename in global.plugins) {
-      if (existsSync(dir)) conn.logger.info(`🌟 Plugin Actualizado - '${filename}'`)
+      if (existsSync(dir)) conn.logger.info(`🌟 Обновленный Плагин - '${filename}'`)
       else {
-        conn.logger.warn(`🗑️ Plugin Eliminado - '${filename}'`)
+        conn.logger.warn(`🗑️ Удаленный Плагин - '${filename}'`)
         return delete global.plugins[filename]
       }
-    } else conn.logger.info(`✨ Nuevo plugin - '${filename}'`)
+    } else conn.logger.info(`✨ Новый плагин - '${filename}'`)
     let err = syntaxerror(readFileSync(dir), filename, {
       sourceType: 'module',
       allowAwaitOutsideFunction: true
     })
-    if (err) conn.logger.error(`syntax error while loading '${filename}'\n${format(err)}`)
+    if (err) conn.logger.error(`синтаксическая ошибка при загрузке '${filename}'\n${format(err)}`)
     else try {
       const module = (await import(`${global.__filename(dir)}?update=${Date.now()}`))
       global.plugins[filename] = module.default || module
     } catch (e) {
-      conn.logger.error(`error require plugin '${filename}\n${format(e)}'`)
+      conn.logger.error(`ошибка, требующая подключения плагина '${filename}\n${format(e)}'`)
     } finally {
       global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)))
     }
@@ -358,5 +358,5 @@ async function _quickTest() {
 }
 
 _quickTest()
-  .then(() => conn.logger.info('✅ Prueba rápida realizado!'))
+  .then(() => conn.logger.info('✅ Проведен экспресс-тест!'))
   .catch(console.error)

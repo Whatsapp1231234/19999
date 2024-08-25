@@ -17,10 +17,10 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 ▢ *🕵🏻‍♂️${mssg.admin}:* ${groupAdmins.length}
 
 ▢ *🪢 ${mssg.gpConf}:*
-• 📮 *Welcome:* ${welcome ? '✅' : '❎'}
+• 📮 *приветствие:* ${welcome ? '✅' : '❎'}
 • ❕ *Detect:* ${detect ? '✅' : '❎'}
 • 🔞 *Nsfw:* ${nsfw ? '✅' : '❎'}
-• 🚨 *Anti Link Wha:* ${antiLink ? '✅' : '❎'}
+• 🚨 *антиссылка:* ${antiLink ? '✅' : '❎'}
 • 🧬 *Captcha:* ${captcha ? '✅' : '❎'}
 • 📑 *Document:* ${useDocument ? '✅' : '❎'}
 
@@ -36,7 +36,7 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 
 handler.help = ['infogp']
 handler.tags = ['group']
-handler.command = ['infogrupo', 'groupinfo', 'infogp'] 
+handler.command = ['анфогруппы', 'groupinfo', 'infogp'] 
 handler.group = true
 
 export default handler
