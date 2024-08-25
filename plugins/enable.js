@@ -48,7 +48,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.delete = !isEnable
       break
 
-    case 'document':
+    case 'publico':
     case 'documento':
     if (m.isGroup) {
         if (!(isAdmin || isOwner)) return dfail('admin', m, conn)
@@ -158,7 +158,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     default:
       //if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage, { quoted: m })
       if (!/[01]/.test(command)) return m.reply(`
-≡ Lista de Opciones
+≡ лист команд
 
 ┌─⊷ *АДМИН*
 ▢ антиудаление
