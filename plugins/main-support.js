@@ -31,6 +31,6 @@ ${bgp3}
 }
 handler.help = ['support']
 handler.tags = ['main']
-handler.command = ['grupos', 'groups', 'support'] 
+handler.command = ['группы', 'groups', 'support'] 
 
 export default handler
