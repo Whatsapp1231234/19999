@@ -35,7 +35,7 @@ ${mssg.wningUser(war)}`, who)
 }
 handler.help = ['warn @user']
 handler.tags = ['group']
-handler.command = ['придуприждения'] 
+handler.command = ['Предупреждение'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
