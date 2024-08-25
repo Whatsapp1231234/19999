@@ -12,7 +12,6 @@ let handler = async function (m, { conn, args, usedPrefix}) {
 handler.help = ['unreg <Num Serie>'] 
 handler.tags = ['rg']
 handler.command = ['unreg'] 
-handler.register = true
 
 export default handler
 

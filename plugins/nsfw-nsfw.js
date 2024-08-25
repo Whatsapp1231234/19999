@@ -55,7 +55,6 @@ handler.help = ['ass', 'boobs', 'lesbian', 'pack', 'pussy']
 handler.tags = ['nsfw']
 handler.command = /^(ass|culos|boobs|boobies|lesbian|lesbians|pussy|cosplay|pack)$/i
 handler.diamond = true
-handler.register = true
 handler.group = true
 
 export default handler

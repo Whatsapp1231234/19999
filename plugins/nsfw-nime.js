@@ -55,7 +55,6 @@ handler.help = ['xwaifu', 'xneko', 'blowjob', 'trap', 'yuri', 'cum', 'hentai']
 handler.tags = ['ansfw']
 handler.command = /^(xwaifu|xneko|blowjob|trap|yuri|cum|hentai)$/i
 handler.diamond = true
-handler.register = true
 handler.group = true
 
 export default handler
