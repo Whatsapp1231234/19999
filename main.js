@@ -246,7 +246,7 @@ global.reloadHandler = async function (restatConn) {
   }
 
   conn.welcome = 'Привет, @user\nДобро пожаловать в @group'
-  conn.bye = 'Ну и иди от сюда не удачник @user'
+  conn.bye = 'Досвидания @user'
   conn.spromote = '@user повысил до администратора'
   conn.sdemote = '@user опущин до пользователя'
   conn.sDesc = 'Описание было изменено на \n@desc'
