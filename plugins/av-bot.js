@@ -12,7 +12,7 @@ let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 } 
 
-handler.customPrefix = /^(bot|Ванилька)$/i
+handler.customPrefix = /^(bot|Пиздюк)$/i
 handler.command = new RegExp
 
 export default handler

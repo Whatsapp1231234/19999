@@ -1,5 +1,5 @@
 { 
-    "name": "Ванилька-bot",
+    "name": "Пиздюк-bot",
     "version": "3.0.0",
     "description": "Customizable WhatsApp Bot",
     "main": "index.js",
@@ -23,19 +23,19 @@
         "dylux-bot",
         "senna",
         "multi-device",
-        "Ванилька-bot",
+        "Пиздюк-bot",
         "baileys-md"
     ],
-    "homepage": "https://github.com/Whatsapp1231234/mas33",
+    "homepage": "https://github.com/Whatsapp1231234/1009",
     "author": {
         "name": "FG98"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Whatsapp1231234/mas33.git"
+        "url": "git+https://github.com/Whatsapp1231234/1009.git"
     },
     "bugs": {
-        "url": "https://github.com/Whatsapp1231234/mas33/issues"
+        "url": "https://github.com/Whatsapp1231234/1009/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {

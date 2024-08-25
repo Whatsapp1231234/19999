@@ -68,8 +68,8 @@ $ pkg install git -y
 $ pkg install nodejs -y
 $ pkg install ffmpeg -y
 $ pkg install imagemagick -y
-$ git clone https://github.com/Whatsapp1231234/mas33
-$ cd mas33
+$ git clone https://github.com/Whatsapp1231234/1009
+$ cd 1009
 $ npm i 
 $ npm start
 ```
