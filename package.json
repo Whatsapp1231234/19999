@@ -1,5 +1,5 @@
 { 
-    "name": "Чума-bot",
+    "name": "Ванилька-bot",
     "version": "3.0.0",
     "description": "Customizable WhatsApp Bot",
     "main": "index.js",
@@ -23,7 +23,7 @@
         "dylux-bot",
         "senna",
         "multi-device",
-        "Чума-bot",
+        "Ванилька-bot",
         "baileys-md"
     ],
     "homepage": "https://github.com/Whatsapp1231234/mas33",
