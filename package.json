@@ -1,5 +1,5 @@
 { 
-    "name": "Пиздюк-bot",
+    "name": "Зарик-bot",
     "version": "3.0.0",
     "description": "Customizable WhatsApp Bot",
     "main": "index.js",
@@ -23,7 +23,7 @@
         "dylux-bot",
         "senna",
         "multi-device",
-        "Пиздюк-bot",
+        "Зарик-bot",
         "baileys-md"
     ],
     "homepage": "https://github.com/Whatsapp1231234/19999",

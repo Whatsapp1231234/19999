@@ -24,12 +24,12 @@ const rl = createInterface(process.stdin, process.stdout)
 const app = express()
 const port = process.env.PORT || 8080;
 
-say('Пиздюк FG98', {
+say('Зарик FG98', {
   font: 'pallet',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-say(`Пиздюк-bot By FG98 Ig: @fg98_ff`, {
+say(`Зарик-bot By FG98 Ig: @fg98_ff`, {
   font: 'console',
   align: 'center',
   gradient: ['cyan', 'magenta']
